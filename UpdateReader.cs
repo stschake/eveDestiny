@@ -71,7 +71,11 @@ namespace eveDestiny
 
             if (ret.Header.Flags.HasFlag(BallFlag.HasMiniBalls))
                 ret.MiniBalls = ReadMiniBalls(reader);
-            ret.Name = ReadString(reader);
+
+            // Crucible:
+            // no more names in destiny data
+            // most of them were invalid anyway, and slimitems have the name, so sensible change for CCP
+            //ret.Name = ReadString(reader);
 
             return ret;
         }
